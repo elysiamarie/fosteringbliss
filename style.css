@@ -74,3 +74,19 @@ hr {
     height: 7px;
     border: 1px solid skyblue;
 }
+
+.side-nav {
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    li {
+        margin: 2px 0 2px 0;
+    }
+
+    li:hover {
+        background-color: rgba(0, 0, 255, 0.2);
+    }
+}
