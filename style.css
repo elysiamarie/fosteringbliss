@@ -1,0 +1,66 @@
+body {
+    background: white;
+    color: skyblue;
+    font-family: Terminal, monospace;
+    font-size: 8pt;
+}
+
+a:link,
+a:visited {
+    color: skyblue;
+    font-size: 8pt;
+}
+
+a:link {
+    text-decoration: overline;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    color: plum;
+    background: skyblue;
+    border: 1px solid plum;
+    cursor: default;
+}
+
+a:active {
+    color: plum;
+    text-decoration: none;
+}
+
+b {
+    color: plum;
+    font-weight: normal;
+}
+
+u {
+    color: skyblue;
+}
+
+i {
+    color: plum;
+    font-style: italic;
+}
+
+s {
+    color: black;
+    text-decoration: line-through;
+}
+
+input,
+textarea {
+    border: 1px solid skyblue;
+    background: plum;
+    color: skyblue;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+hr {
+    width: 170px;
+    height: 7px;
+    border: 1px solid skyblue;
+}
