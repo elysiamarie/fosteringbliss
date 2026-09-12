@@ -3,6 +3,16 @@ body {
     color: skyblue;
     font-family: Terminal, monospace;
     font-size: 8pt;
+
+    
+scrollbar-3dlight-color: #40697B;
+scrollbar-arrow-color: #40697B;
+scrollbar-base-color: #40697B;
+scrollbar-darkshadow-color: #40697B;
+scrollbar-face-color: #284653;
+scrollbar-highlight-color: #40697B;
+scrollbar-shadow-color: #40697B;
+scrollbar-track-color: #40697B}
 }
 
 a:link,
