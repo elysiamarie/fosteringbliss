@@ -1,0 +1,605 @@
+/* =========================================================
+   NEON ABSTRACT COLOR THEME
+   ========================================================= */
+
+:root {
+    /* Main palette */
+    --bg:          #171a24;
+    --bg-dark:     #0d1018;
+    --bg-light:    #24283a;
+
+    --text:        #e8e8ed;
+    --text-muted:  #a9a9b8;
+
+    --red:         #ff2038;
+    --red-dark:    #c9102b;
+
+    --blue:        #315cff;
+    --blue-light:  #3e8cff;
+
+    --green:       #238d63;
+    --green-light: #43b97e;
+
+    --purple:      #6546b8;
+    --purple-light:#956cff;
+
+    --magenta:     #f42c91;
+
+    --border:      #46495c;
+
+    /* Effects */
+    --glow-red:    0 0 12px rgba(255, 32, 56, .55);
+    --glow-blue:   0 0 12px rgba(49, 92, 255, .55);
+    --glow-green:  0 0 12px rgba(67, 185, 126, .45);
+    --glow-purple: 0 0 12px rgba(149, 108, 255, .45);
+
+    --radius: 4px;
+}
+
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    background:
+        radial-gradient(circle at 15% 20%, rgba(255, 32, 56, .12), transparent 25%),
+        radial-gradient(circle at 85% 30%, rgba(49, 92, 255, .12), transparent 30%),
+        radial-gradient(circle at 50% 90%, rgba(101, 70, 184, .12), transparent 30%),
+        var(--bg);
+
+    color: var(--text);
+
+    font-family:
+        Inter,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   TEXT
+   ========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 1.5em;
+    margin-bottom: .5em;
+
+    line-height: 1.2;
+    color: #fff;
+
+    font-weight: 700;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    color: var(--red);
+    text-shadow: var(--glow-red);
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: var(--blue-light);
+    text-shadow: var(--glow-blue);
+}
+
+h3 {
+    font-size: 1.75rem;
+    color: var(--green-light);
+    text-shadow: var(--glow-green);
+}
+
+h4 {
+    color: var(--purple-light);
+}
+
+h5 {
+    color: var(--magenta);
+}
+
+h6 {
+    color: var(--text-muted);
+}
+
+p {
+    color: var(--text);
+    margin: 0 0 1.25rem;
+}
+
+.lead {
+    font-size: 1.25rem;
+    color: #fff;
+}
+
+.muted {
+    color: var(--text-muted);
+}
+
+.small {
+    font-size: .875rem;
+}
+
+strong {
+    color: #fff;
+}
+
+em {
+    color: var(--magenta);
+}
+
+mark {
+    background: var(--red);
+    color: #fff;
+    padding: .1em .35em;
+}
+
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+a {
+    color: var(--blue-light);
+    text-decoration: underline;
+    text-decoration-color: rgba(62, 140, 255, .45);
+    text-underline-offset: 3px;
+
+    transition:
+        color .2s ease,
+        text-shadow .2s ease,
+        text-decoration-color .2s ease;
+}
+
+a:visited {
+    color: var(--purple-light);
+}
+
+a:hover {
+    color: #fff;
+    text-decoration-color: var(--red);
+    text-shadow: var(--glow-blue);
+}
+
+a:active {
+    color: var(--red);
+}
+
+a:focus-visible {
+    outline: 2px solid var(--magenta);
+    outline-offset: 4px;
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+nav {
+    background: rgba(13, 16, 24, .9);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 2rem;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    backdrop-filter: blur(12px);
+}
+
+nav a {
+    display: inline-block;
+    margin-right: 1.5rem;
+
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 600;
+
+    transition: .2s ease;
+}
+
+nav a:hover {
+    color: var(--red);
+    transform: translateY(-2px);
+    text-shadow: var(--glow-red);
+}
+
+nav a.active {
+    color: var(--blue-light);
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+button,
+.button {
+    display: inline-block;
+
+    padding: .7rem 1.25rem;
+
+    border: 1px solid var(--red);
+    border-radius: var(--radius);
+
+    background: var(--red);
+    color: white;
+
+    font: inherit;
+    font-weight: 700;
+
+    cursor: pointer;
+    text-decoration: none;
+
+    box-shadow: var(--glow-red);
+
+    transition:
+        background .2s ease,
+        border-color .2s ease,
+        box-shadow .2s ease,
+        transform .2s ease;
+}
+
+button:hover,
+.button:hover {
+    background: #ff4b5e;
+    border-color: #ff7180;
+
+    box-shadow:
+        0 0 8px var(--red),
+        0 0 25px rgba(255, 32, 56, .5);
+
+    transform: translateY(-2px);
+}
+
+button:active,
+.button:active {
+    transform: translateY(0);
+}
+
+.button-blue {
+    background: var(--blue);
+    border-color: var(--blue);
+
+    box-shadow: var(--glow-blue);
+}
+
+.button-blue:hover {
+    background: var(--blue-light);
+}
+
+.button-green {
+    background: var(--green);
+    border-color: var(--green-light);
+
+    box-shadow: var(--glow-green);
+}
+
+.button-purple {
+    background: var(--purple);
+    border-color: var(--purple-light);
+
+    box-shadow: var(--glow-purple);
+}
+
+.button-outline {
+    background: transparent;
+    color: var(--red);
+    box-shadow: none;
+}
+
+.button-outline:hover {
+    background: var(--red);
+    color: #fff;
+}
+
+
+/* =========================================================
+   PANELS / CARDS
+   ========================================================= */
+
+.card {
+    padding: 1.5rem;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 32, 56, .07),
+            rgba(49, 92, 255, .07)
+        ),
+        var(--bg-light);
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, .3);
+
+    transition:
+        border-color .25s ease,
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.card:hover {
+    border-color: var(--blue);
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, .4),
+        var(--glow-blue);
+}
+
+
+/* =========================================================
+   BLOCKQUOTE
+   ========================================================= */
+
+blockquote {
+    margin: 2rem 0;
+    padding: 1rem 1.5rem;
+
+    border-left: 4px solid var(--magenta);
+
+    background: rgba(244, 44, 145, .07);
+
+    color: #ddd;
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+blockquote cite {
+    display: block;
+    margin-top: .5rem;
+
+    color: var(--magenta);
+    font-size: .875rem;
+    font-style: normal;
+}
+
+
+/* =========================================================
+   LISTS
+   ========================================================= */
+
+ul,
+ol {
+    padding-left: 1.5rem;
+}
+
+li::marker {
+    color: var(--red);
+}
+
+ul ul li::marker {
+    color: var(--blue-light);
+}
+
+
+/* =========================================================
+   HORIZONTAL RULE
+   ========================================================= */
+
+hr {
+    height: 1px;
+    margin: 3rem 0;
+
+    border: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--red),
+            var(--blue),
+            var(--purple),
+            transparent
+        );
+
+    box-shadow: 0 0 8px rgba(255, 32, 56, .3);
+}
+
+
+/* =========================================================
+   CODE
+   ========================================================= */
+
+code {
+    padding: .15rem .4rem;
+
+    border-radius: 3px;
+
+    background: #0a0c12;
+    color: var(--green-light);
+
+    font-family:
+        "SFMono-Regular",
+        Consolas,
+        monospace;
+}
+
+pre {
+    padding: 1.25rem;
+    overflow-x: auto;
+
+    background: #0a0c12;
+
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--blue);
+
+    color: var(--green-light);
+}
+
+pre code {
+    padding: 0;
+    background: none;
+}
+
+
+/* =========================================================
+   FORMS
+   ========================================================= */
+
+label {
+    display: block;
+    margin-bottom: .4rem;
+
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+
+    padding: .75rem 1rem;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+
+    background: #11141d;
+    color: var(--text);
+
+    font: inherit;
+
+    transition:
+        border-color .2s ease,
+        box-shadow .2s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #686b7b;
+}
+
+input:hover,
+textarea:hover,
+select:hover {
+    border-color: var(--blue);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+
+    border-color: var(--blue-light);
+
+    box-shadow:
+        0 0 0 3px rgba(49, 92, 255, .15),
+        var(--glow-blue);
+}
+
+
+/* =========================================================
+   TABLES
+   ========================================================= */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: .75rem 1rem;
+    text-align: left;
+
+    border-bottom: 1px solid var(--border);
+}
+
+th {
+    background: var(--purple);
+    color: white;
+}
+
+tr:hover td {
+    background: rgba(49, 92, 255, .08);
+}
+
+
+/* =========================================================
+   BADGES
+   ========================================================= */
+
+.badge {
+    display: inline-block;
+
+    padding: .2rem .6rem;
+
+    border-radius: 999px;
+
+    background: var(--blue);
+    color: #fff;
+
+    font-size: .75rem;
+    font-weight: 700;
+}
+
+.badge-red {
+    background: var(--red);
+}
+
+.badge-green {
+    background: var(--green);
+}
+
+.badge-purple {
+    background: var(--purple);
+}
+
+.badge-pink {
+    background: var(--magenta);
+}
+
+
+/* =========================================================
+   SELECTION
+   ========================================================= */
+
+::selection {
+    background: var(--red);
+    color: #fff;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--purple);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--blue);
+}
